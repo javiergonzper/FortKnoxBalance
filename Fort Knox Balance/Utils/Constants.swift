@@ -6,10 +6,16 @@
 //  Copyright © 2017 Treasire Inc. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct UITableViewCellsIds {
     
     static let yearUiTableViewCell = "YearUiTableViewCell"
     
+}
+
+struct Colors {
+    static let navigationBarBackgroundColor = UIColor.groupTableViewBackground
+    static let loadingAnimationColor = UIColor.lightGray
+
 }

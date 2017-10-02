@@ -8,16 +8,19 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: ParentViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var navigationBarTitleButton: UIButton!
     @IBOutlet var yearTableView: UITableView!
+    
+    var listYearsAvailable:NSMutableArray?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         self.applyStyles()
+        self.loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +37,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         navigationBarTitleButton.layer.borderColor = UIColor.black.cgColor
         navigationBarTitleButton.setTitle(NSLocalizedString("Home_View_Title_Year", comment: ""), for: UIControlState.normal)
         
+        yearTableView.backgroundColor = Colors.navigationBarBackgroundColor
+    }
+    
+    func loadData() {
+        
+        self.startAnimating()
+        
+        
+        
+        /*let delay = DispatchTime.now() + 2
+        DispatchQueue.main.asyncAfter(deadline: delay) {
+            self.stopAnimating()
+        }*/
     }
 
     // MARK: - Table view data source
@@ -43,7 +59,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 59
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -79,4 +95,3 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         })
     }
 }
-

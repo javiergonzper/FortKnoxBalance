@@ -7,6 +7,7 @@ target 'Fort Knox Balance' do
 	
   pod 'Charts', '3.0.3'
   pod 'SwiftyJSON', '3.1.4'
+  pod 'NVActivityIndicatorView', '3.7.0'
 
   # Pods for Fort Knox Balance
 
