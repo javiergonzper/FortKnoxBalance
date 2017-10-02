@@ -22,7 +22,7 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         self.applyStyles()
         self.loadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,13 +42,13 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
     
     func loadData() {
         
-        self.startAnimating()
+        
         
         
         
         /*let delay = DispatchTime.now() + 2
         DispatchQueue.main.asyncAfter(deadline: delay) {
-            self.stopAnimating()
+            seFlf.stopAnimating()
         }*/
     }
 
@@ -59,7 +59,7 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 59
+        return JSONDataInfo.allYearsAndFilesAvailable.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -68,7 +68,7 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCellsIds.yearUiTableViewCell, for: indexPath) as! YearUiTableViewCell
-        cell.title.text = "2017"
+        cell.title.text = JSONDataInfo.allYearsAndFilesAvailable[indexPath.row].year?.stringValue
         
         return cell
     }
@@ -79,10 +79,29 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
     
     @IBAction func didTapNavigationBarTitleButton() {
         
-        var yPositionYearTableView:CGFloat = -112.0
+        let maxNumberRowsVisible:CGFloat = 4.0
+        var yPositionYearTableView:CGFloat!
+        let heightStatusBar = UIApplication.shared.statusBarFrame.size.height
         
-        if self.yearTableView.frame.origin.y != 64.0 {
-            yPositionYearTableView = 64.0
+        if self.yearTableView.frame.origin.y < 0 {
+            //To be visisble
+            
+            yPositionYearTableView = heightStatusBar + FramesSizes.YearUITableViewCell
+            
+            //Size of the yearTableView in function of the number of the years
+            if CGFloat(JSONDataInfo.allYearsAndFilesAvailable.count) <= maxNumberRowsVisible {
+                
+                yearTableView.frame = CGRect(x:yearTableView.frame.origin.x , y:-(FramesSizes.YearUITableViewCell*CGFloat(JSONDataInfo.allYearsAndFilesAvailable.count)) , width: yearTableView.frame.width, height: FramesSizes.YearUITableViewCell*CGFloat(JSONDataInfo.allYearsAndFilesAvailable.count))
+                yearTableView.isScrollEnabled = false
+                
+            } else {
+                
+                yearTableView.isScrollEnabled = true
+                
+            }
+        } else {
+            //To be hidden
+            yPositionYearTableView = -(UIApplication.shared.statusBarFrame.size.height + FramesSizes.YearUITableViewCell * maxNumberRowsVisible)
         }
         
         UIView.animate(withDuration: 0.5,

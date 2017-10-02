@@ -22,10 +22,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3kq-JN-oCa">
-                                <rect key="frame" x="0.0" y="-112" width="375" height="172"/>
+                                <rect key="frame" x="0.0" y="-116" width="375" height="176"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="172" id="aH7-e6-mJZ"/>
+                                    <constraint firstAttribute="height" constant="176" id="aH7-e6-mJZ"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YearUiTableViewCell" id="DKj-IM-uQ9" customClass="YearUiTableViewCell" customModule="Fort_Knox_Balance" customModuleProvider="target">
@@ -87,7 +87,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="3kq-JN-oCa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-112" id="3W9-tx-kPD"/>
+                            <constraint firstItem="3kq-JN-oCa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-116" id="3W9-tx-kPD"/>
                             <constraint firstItem="yGg-24-g5z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7cK-Gf-Asd"/>
                             <constraint firstAttribute="trailing" secondItem="yGg-24-g5z" secondAttribute="trailing" id="DSm-I0-Es3"/>
                             <constraint firstAttribute="trailing" secondItem="3kq-JN-oCa" secondAttribute="trailing" id="HFr-X0-svg"/>

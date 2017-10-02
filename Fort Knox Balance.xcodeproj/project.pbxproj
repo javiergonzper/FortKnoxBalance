@@ -22,6 +22,7 @@
 		CBF55DB81F825DE100D08915 /* YearUiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF55DB71F825DE100D08915 /* YearUiTableViewCell.swift */; };
 		CBF55DBD1F827E3600D08915 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF55DBC1F827E3600D08915 /* Constants.swift */; };
 		CBF55DBF1F82872300D08915 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF55DBE1F82872300D08915 /* ParentViewController.swift */; };
+		CBF55DC21F828F1900D08915 /* YearFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF55DC11F828F1900D08915 /* YearFile.swift */; };
 		D39C9F1F0AE6BDCBCED9E6A2 /* Pods_Fort_Knox_BalanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E959167E64545BD72C07447 /* Pods_Fort_Knox_BalanceTests.framework */; };
 		F0A033163EC055E46F1A313F /* Pods_Fort_Knox_Balance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8C2FDC3B1BEE6633694B92 /* Pods_Fort_Knox_Balance.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		CBF55DB71F825DE100D08915 /* YearUiTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YearUiTableViewCell.swift; path = Cells/YearUiTableViewCell.swift; sourceTree = "<group>"; };
 		CBF55DBC1F827E3600D08915 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
 		CBF55DBE1F82872300D08915 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentViewController.swift; path = Utils/ParentViewController.swift; sourceTree = "<group>"; };
+		CBF55DC11F828F1900D08915 /* YearFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YearFile.swift; path = "Utils/Data Objects/YearFile.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,10 +213,19 @@
 		CBF55DBB1F827CBF00D08915 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CBF55DC01F828EEC00D08915 /* Data Obects */,
 				CBF55DBC1F827E3600D08915 /* Constants.swift */,
 				CBF55DBE1F82872300D08915 /* ParentViewController.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		CBF55DC01F828EEC00D08915 /* Data Obects */ = {
+			isa = PBXGroup;
+			children = (
+				CBF55DC11F828F1900D08915 /* YearFile.swift */,
+			);
+			name = "Data Obects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,6 +534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBF55DB81F825DE100D08915 /* YearUiTableViewCell.swift in Sources */,
+				CBF55DC21F828F1900D08915 /* YearFile.swift in Sources */,
 				CBF55DBF1F82872300D08915 /* ParentViewController.swift in Sources */,
 				CB3B5DB01F823640009F2EAF /* HomeViewController.swift in Sources */,
 				CB3B5DAE1F823640009F2EAF /* AppDelegate.swift in Sources */,
