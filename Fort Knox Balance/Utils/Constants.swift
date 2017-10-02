@@ -25,6 +25,6 @@ struct Colors {
 }
 
 struct JSONDataInfo {
-    static let allYearsAndFilesAvailable:Array = [YearFile(year: 2016, fileName: "2016-treasury_1.json"),
-                                                  YearFile(year: 2017, fileName: "2017-treasury.json")]
+    static let allYearsAndFilesAvailable:Array = [YearFile(year: 2016, fileName: "2016-treasury_1.json", fileType: "json"),
+                                                  YearFile(year: 2017, fileName: "2017-treasury.json", fileType: "json")]
 }

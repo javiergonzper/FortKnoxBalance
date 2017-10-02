@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class HomeViewController: ParentViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -112,5 +113,20 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         }, completion: { (finished) -> Void in
             // ....
         })
+    }
+    
+    //MARK: - JSON Information
+    func loadInormationByYearFile(yearFile:YearFile) {
+        
+        if let file = Bundle.main.path(forResource: yearFile.fileName, ofType: yearFile.fileType) {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: file))
+                let json = try JSON(data: data)
+            } catch {
+                print("Error getting JSON")
+            }
+        } else {
+            
+        }
     }
 }

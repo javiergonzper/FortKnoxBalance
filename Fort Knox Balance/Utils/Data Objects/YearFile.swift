@@ -12,9 +12,11 @@ class YearFile: NSObject {
     
     var year: NSNumber?
     var fileName: String?
+    var fileType: String?
     
-    init(year: NSNumber, fileName: String) {
+    init(year: NSNumber, fileName: String, fileType: String) {
         self.year = year
         self.fileName = fileName
+        self.fileType = fileType
     }
 }
