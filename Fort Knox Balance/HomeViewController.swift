@@ -8,9 +8,10 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var navigationBarTitleButton: UIButton!
+    @IBOutlet var yearTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class HomeViewController: UIViewController {
 
     func applyStyles() {
         
+        //Title/Button of the Navigation bar
         navigationBarTitleButton.backgroundColor = UIColor.white
         navigationBarTitleButton.layer.cornerRadius = 0
         navigationBarTitleButton.layer.borderWidth = 1
@@ -34,5 +36,47 @@ class HomeViewController: UIViewController {
         
     }
 
+    // MARK: - Table view data source
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCellsIds.yearUiTableViewCell, for: indexPath) as! YearUiTableViewCell
+        cell.title.text = "2017"
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    @IBAction func didTapNavigationBarTitleButton() {
+        
+        var yPositionYearTableView:CGFloat = -112.0
+        
+        if self.yearTableView.frame.origin.y != 64.0 {
+            yPositionYearTableView = 64.0
+        }
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.0,
+                       options: UIViewAnimationOptions.curveEaseIn,
+                       animations: { () -> Void in
+                        self.yearTableView.frame.origin.y = yPositionYearTableView
+        }, completion: { (finished) -> Void in
+            // ....
+        })
+    }
 }
 

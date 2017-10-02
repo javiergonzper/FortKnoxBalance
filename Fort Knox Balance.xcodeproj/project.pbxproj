@@ -19,6 +19,8 @@
 		CBF55DAB1F82579B00D08915 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DAA1F82579B00D08915 /* Info.plist */; };
 		CBF55DAE1F8257AB00D08915 /* 2016-treasury_1.json in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DAC1F8257AB00D08915 /* 2016-treasury_1.json */; };
 		CBF55DAF1F8257AB00D08915 /* 2017-treasury.json in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DAD1F8257AB00D08915 /* 2017-treasury.json */; };
+		CBF55DB81F825DE100D08915 /* YearUiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF55DB71F825DE100D08915 /* YearUiTableViewCell.swift */; };
+		CBF55DBA1F8271DC00D08915 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF55DB91F8271DC00D08915 /* Constants.swift */; };
 		D39C9F1F0AE6BDCBCED9E6A2 /* Pods_Fort_Knox_BalanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E959167E64545BD72C07447 /* Pods_Fort_Knox_BalanceTests.framework */; };
 		F0A033163EC055E46F1A313F /* Pods_Fort_Knox_Balance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8C2FDC3B1BEE6633694B92 /* Pods_Fort_Knox_Balance.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +69,8 @@
 		CBF55DAA1F82579B00D08915 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
 		CBF55DAC1F8257AB00D08915 /* 2016-treasury_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "2016-treasury_1.json"; path = "Supporting Files/JSON/2016-treasury_1.json"; sourceTree = "<group>"; };
 		CBF55DAD1F8257AB00D08915 /* 2017-treasury.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "2017-treasury.json"; path = "Supporting Files/JSON/2017-treasury.json"; sourceTree = "<group>"; };
+		CBF55DB71F825DE100D08915 /* YearUiTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YearUiTableViewCell.swift; path = Cells/YearUiTableViewCell.swift; sourceTree = "<group>"; };
+		CBF55DB91F8271DC00D08915 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "Supporting Files/Constants.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 		CB3B5DAC1F823640009F2EAF /* Fort Knox Balance */ = {
 			isa = PBXGroup;
 			children = (
+				CBF55DB41F825D5D00D08915 /* Cells */,
 				CB3B5DAD1F823640009F2EAF /* AppDelegate.swift */,
 				CB3B5DAF1F823640009F2EAF /* HomeViewController.swift */,
 				CB3B5DB11F823641009F2EAF /* Main.storyboard */,
@@ -179,6 +184,7 @@
 			children = (
 				CBF55DA91F82575900D08915 /* JSON */,
 				CBF55DA71F82563A00D08915 /* Localizable.strings */,
+				CBF55DB91F8271DC00D08915 /* Constants.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -190,6 +196,14 @@
 				CBF55DAD1F8257AB00D08915 /* 2017-treasury.json */,
 			);
 			name = JSON;
+			sourceTree = "<group>";
+		};
+		CBF55DB41F825D5D00D08915 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CBF55DB71F825DE100D08915 /* YearUiTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,8 +509,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF55DB81F825DE100D08915 /* YearUiTableViewCell.swift in Sources */,
 				CB3B5DB01F823640009F2EAF /* HomeViewController.swift in Sources */,
 				CB3B5DAE1F823640009F2EAF /* AppDelegate.swift in Sources */,
+				CBF55DBA1F8271DC00D08915 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
