@@ -664,7 +664,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TA2RGD8TL5;
-				INFOPLIST_FILE = "Fort Knox Balance/Info.plist";
+				INFOPLIST_FILE = "Fort Knox Balance/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fortknox.balance.Fort-Knox-Balance";
@@ -679,7 +679,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TA2RGD8TL5;
-				INFOPLIST_FILE = "Fort Knox Balance/Info.plist";
+				INFOPLIST_FILE = "Fort Knox Balance/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fortknox.balance.Fort-Knox-Balance";
