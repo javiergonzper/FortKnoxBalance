@@ -8,11 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
+    @IBOutlet var navigationBarTitleButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.applyStyles()
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +24,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func applyStyles() {
+        
+        navigationBarTitleButton.backgroundColor = UIColor.white
+        navigationBarTitleButton.layer.cornerRadius = 0
+        navigationBarTitleButton.layer.borderWidth = 1
+        navigationBarTitleButton.layer.borderColor = UIColor.black.cgColor
+        navigationBarTitleButton.setTitle(NSLocalizedString("Home_View_Title_Year", comment: ""), for: UIControlState.normal)
+        
+    }
 
 }
 

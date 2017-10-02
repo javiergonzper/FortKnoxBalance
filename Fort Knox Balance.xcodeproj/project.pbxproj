@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		C5F73F181EF810FA25D3A5BF /* Pods_Fort_Knox_BalanceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC51145E38D7F4DB4B284F6 /* Pods_Fort_Knox_BalanceUITests.framework */; };
 		CB3B5DAE1F823640009F2EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B5DAD1F823640009F2EAF /* AppDelegate.swift */; };
-		CB3B5DB01F823640009F2EAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B5DAF1F823640009F2EAF /* ViewController.swift */; };
+		CB3B5DB01F823640009F2EAF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B5DAF1F823640009F2EAF /* HomeViewController.swift */; };
 		CB3B5DB31F823641009F2EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3B5DB11F823641009F2EAF /* Main.storyboard */; };
 		CB3B5DB51F823641009F2EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3B5DB41F823641009F2EAF /* Assets.xcassets */; };
 		CB3B5DB81F823641009F2EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3B5DB61F823641009F2EAF /* LaunchScreen.storyboard */; };
 		CB3B5DC31F823641009F2EAF /* Fort_Knox_BalanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B5DC21F823641009F2EAF /* Fort_Knox_BalanceTests.swift */; };
 		CB3B5DCE1F823641009F2EAF /* Fort_Knox_BalanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B5DCD1F823641009F2EAF /* Fort_Knox_BalanceUITests.swift */; };
+		CBF55DA51F82563A00D08915 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DA71F82563A00D08915 /* Localizable.strings */; };
+		CBF55DAB1F82579B00D08915 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DAA1F82579B00D08915 /* Info.plist */; };
+		CBF55DAE1F8257AB00D08915 /* 2016-treasury_1.json in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DAC1F8257AB00D08915 /* 2016-treasury_1.json */; };
+		CBF55DAF1F8257AB00D08915 /* 2017-treasury.json in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DAD1F8257AB00D08915 /* 2017-treasury.json */; };
 		D39C9F1F0AE6BDCBCED9E6A2 /* Pods_Fort_Knox_BalanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E959167E64545BD72C07447 /* Pods_Fort_Knox_BalanceTests.framework */; };
 		F0A033163EC055E46F1A313F /* Pods_Fort_Knox_Balance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8C2FDC3B1BEE6633694B92 /* Pods_Fort_Knox_Balance.framework */; };
 /* End PBXBuildFile section */
@@ -48,17 +52,21 @@
 		AD8C2FDC3B1BEE6633694B92 /* Pods_Fort_Knox_Balance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fort_Knox_Balance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3B5DAA1F823640009F2EAF /* Fort Knox Balance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fort Knox Balance.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3B5DAD1F823640009F2EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB3B5DAF1F823640009F2EAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CB3B5DAF1F823640009F2EAF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CB3B5DB21F823641009F2EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB3B5DB41F823641009F2EAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB3B5DB71F823641009F2EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CB3B5DB91F823641009F2EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB3B5DBE1F823641009F2EAF /* Fort Knox BalanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fort Knox BalanceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3B5DC21F823641009F2EAF /* Fort_Knox_BalanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fort_Knox_BalanceTests.swift; sourceTree = "<group>"; };
 		CB3B5DC41F823641009F2EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB3B5DC91F823641009F2EAF /* Fort Knox BalanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fort Knox BalanceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3B5DCD1F823641009F2EAF /* Fort_Knox_BalanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fort_Knox_BalanceUITests.swift; sourceTree = "<group>"; };
 		CB3B5DCF1F823641009F2EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBF55DA61F82563A00D08915 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CBF55DA81F82566A00D08915 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CBF55DAA1F82579B00D08915 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
+		CBF55DAC1F8257AB00D08915 /* 2016-treasury_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "2016-treasury_1.json"; path = "Supporting Files/JSON/2016-treasury_1.json"; sourceTree = "<group>"; };
+		CBF55DAD1F8257AB00D08915 /* 2017-treasury.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "2017-treasury.json"; path = "Supporting Files/JSON/2017-treasury.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,11 +146,12 @@
 			isa = PBXGroup;
 			children = (
 				CB3B5DAD1F823640009F2EAF /* AppDelegate.swift */,
-				CB3B5DAF1F823640009F2EAF /* ViewController.swift */,
+				CB3B5DAF1F823640009F2EAF /* HomeViewController.swift */,
 				CB3B5DB11F823641009F2EAF /* Main.storyboard */,
 				CB3B5DB41F823641009F2EAF /* Assets.xcassets */,
 				CB3B5DB61F823641009F2EAF /* LaunchScreen.storyboard */,
-				CB3B5DB91F823641009F2EAF /* Info.plist */,
+				CBF55DA41F8255C800D08915 /* Supporting Files */,
+				CBF55DAA1F82579B00D08915 /* Info.plist */,
 			);
 			path = "Fort Knox Balance";
 			sourceTree = "<group>";
@@ -163,6 +172,24 @@
 				CB3B5DCF1F823641009F2EAF /* Info.plist */,
 			);
 			path = "Fort Knox BalanceUITests";
+			sourceTree = "<group>";
+		};
+		CBF55DA41F8255C800D08915 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBF55DA91F82575900D08915 /* JSON */,
+				CBF55DA71F82563A00D08915 /* Localizable.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CBF55DA91F82575900D08915 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				CBF55DAC1F8257AB00D08915 /* 2016-treasury_1.json */,
+				CBF55DAD1F8257AB00D08915 /* 2017-treasury.json */,
+			);
+			name = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +293,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = CB3B5DA11F823640009F2EAF;
 			productRefGroup = CB3B5DAB1F823640009F2EAF /* Products */;
@@ -285,7 +313,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB3B5DB81F823641009F2EAF /* LaunchScreen.storyboard in Resources */,
+				CBF55DAE1F8257AB00D08915 /* 2016-treasury_1.json in Resources */,
+				CBF55DAF1F8257AB00D08915 /* 2017-treasury.json in Resources */,
+				CBF55DA51F82563A00D08915 /* Localizable.strings in Resources */,
 				CB3B5DB51F823641009F2EAF /* Assets.xcassets in Resources */,
+				CBF55DAB1F82579B00D08915 /* Info.plist in Resources */,
 				CB3B5DB31F823641009F2EAF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,7 +495,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB3B5DB01F823640009F2EAF /* ViewController.swift in Sources */,
+				CB3B5DB01F823640009F2EAF /* HomeViewController.swift in Sources */,
 				CB3B5DAE1F823640009F2EAF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +548,16 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		CBF55DA71F82563A00D08915 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBF55DA61F82563A00D08915 /* en */,
+				CBF55DA81F82566A00D08915 /* es */,
+			);
+			name = Localizable.strings;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -523,6 +565,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -574,6 +617,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -725,6 +769,7 @@
 				CB3B5DD41F823641009F2EAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB3B5DD51F823641009F2EAF /* Build configuration list for PBXNativeTarget "Fort Knox BalanceTests" */ = {
 			isa = XCConfigurationList;
@@ -733,6 +778,7 @@
 				CB3B5DD71F823641009F2EAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB3B5DD81F823641009F2EAF /* Build configuration list for PBXNativeTarget "Fort Knox BalanceUITests" */ = {
 			isa = XCConfigurationList;
@@ -741,6 +787,7 @@
 				CB3B5DDA1F823641009F2EAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
