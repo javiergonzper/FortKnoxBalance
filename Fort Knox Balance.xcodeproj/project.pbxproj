@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5F73F181EF810FA25D3A5BF /* Pods_Fort_Knox_BalanceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC51145E38D7F4DB4B284F6 /* Pods_Fort_Knox_BalanceUITests.framework */; };
 		CB3B5DAE1F823640009F2EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B5DAD1F823640009F2EAF /* AppDelegate.swift */; };
 		CB3B5DB01F823640009F2EAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B5DAF1F823640009F2EAF /* ViewController.swift */; };
 		CB3B5DB31F823641009F2EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3B5DB11F823641009F2EAF /* Main.storyboard */; };
@@ -14,6 +15,8 @@
 		CB3B5DB81F823641009F2EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3B5DB61F823641009F2EAF /* LaunchScreen.storyboard */; };
 		CB3B5DC31F823641009F2EAF /* Fort_Knox_BalanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B5DC21F823641009F2EAF /* Fort_Knox_BalanceTests.swift */; };
 		CB3B5DCE1F823641009F2EAF /* Fort_Knox_BalanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B5DCD1F823641009F2EAF /* Fort_Knox_BalanceUITests.swift */; };
+		D39C9F1F0AE6BDCBCED9E6A2 /* Pods_Fort_Knox_BalanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E959167E64545BD72C07447 /* Pods_Fort_Knox_BalanceTests.framework */; };
+		F0A033163EC055E46F1A313F /* Pods_Fort_Knox_Balance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8C2FDC3B1BEE6633694B92 /* Pods_Fort_Knox_Balance.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C67B830913BCFB1C36DB1FA /* Pods-Fort Knox Balance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fort Knox Balance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fort Knox Balance/Pods-Fort Knox Balance.release.xcconfig"; sourceTree = "<group>"; };
+		2D883BF52E00999336CDDE35 /* Pods-Fort Knox Balance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fort Knox Balance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fort Knox Balance/Pods-Fort Knox Balance.debug.xcconfig"; sourceTree = "<group>"; };
+		39A8B6A53CC188B43DB1AB28 /* Pods-Fort Knox BalanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fort Knox BalanceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fort Knox BalanceTests/Pods-Fort Knox BalanceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5E959167E64545BD72C07447 /* Pods_Fort_Knox_BalanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fort_Knox_BalanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D26705350350C1D8372B052 /* Pods-Fort Knox BalanceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fort Knox BalanceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fort Knox BalanceUITests/Pods-Fort Knox BalanceUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6D98BB9B66F7A06E88216D9D /* Pods-Fort Knox BalanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fort Knox BalanceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fort Knox BalanceTests/Pods-Fort Knox BalanceTests.release.xcconfig"; sourceTree = "<group>"; };
+		A62219E171FEC0BBE806C038 /* Pods-Fort Knox BalanceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fort Knox BalanceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fort Knox BalanceUITests/Pods-Fort Knox BalanceUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ACC51145E38D7F4DB4B284F6 /* Pods_Fort_Knox_BalanceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fort_Knox_BalanceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD8C2FDC3B1BEE6633694B92 /* Pods_Fort_Knox_Balance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fort_Knox_Balance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3B5DAA1F823640009F2EAF /* Fort Knox Balance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fort Knox Balance.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3B5DAD1F823640009F2EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB3B5DAF1F823640009F2EAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A033163EC055E46F1A313F /* Pods_Fort_Knox_Balance.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D39C9F1F0AE6BDCBCED9E6A2 /* Pods_Fort_Knox_BalanceTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5F73F181EF810FA25D3A5BF /* Pods_Fort_Knox_BalanceUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8EB28C6FB8B007A28D49E1A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2D883BF52E00999336CDDE35 /* Pods-Fort Knox Balance.debug.xcconfig */,
+				0C67B830913BCFB1C36DB1FA /* Pods-Fort Knox Balance.release.xcconfig */,
+				39A8B6A53CC188B43DB1AB28 /* Pods-Fort Knox BalanceTests.debug.xcconfig */,
+				6D98BB9B66F7A06E88216D9D /* Pods-Fort Knox BalanceTests.release.xcconfig */,
+				A62219E171FEC0BBE806C038 /* Pods-Fort Knox BalanceUITests.debug.xcconfig */,
+				6D26705350350C1D8372B052 /* Pods-Fort Knox BalanceUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA3038ECA5FD8EEB2592C680 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD8C2FDC3B1BEE6633694B92 /* Pods_Fort_Knox_Balance.framework */,
+				5E959167E64545BD72C07447 /* Pods_Fort_Knox_BalanceTests.framework */,
+				ACC51145E38D7F4DB4B284F6 /* Pods_Fort_Knox_BalanceUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CB3B5DA11F823640009F2EAF = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +119,8 @@
 				CB3B5DC11F823641009F2EAF /* Fort Knox BalanceTests */,
 				CB3B5DCC1F823641009F2EAF /* Fort Knox BalanceUITests */,
 				CB3B5DAB1F823640009F2EAF /* Products */,
+				8EB28C6FB8B007A28D49E1A1 /* Pods */,
+				AA3038ECA5FD8EEB2592C680 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB3B5DD21F823641009F2EAF /* Build configuration list for PBXNativeTarget "Fort Knox Balance" */;
 			buildPhases = (
+				3D32D998B10E46DDC78AD1FB /* [CP] Check Pods Manifest.lock */,
 				CB3B5DA61F823640009F2EAF /* Sources */,
 				CB3B5DA71F823640009F2EAF /* Frameworks */,
 				CB3B5DA81F823640009F2EAF /* Resources */,
+				A09D656055B51FDC4D03754C /* [CP] Embed Pods Frameworks */,
+				A5445BD74EEF09745EE762A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB3B5DD51F823641009F2EAF /* Build configuration list for PBXNativeTarget "Fort Knox BalanceTests" */;
 			buildPhases = (
+				AE515E88003A2AC272D9F91B /* [CP] Check Pods Manifest.lock */,
 				CB3B5DBA1F823641009F2EAF /* Sources */,
 				CB3B5DBB1F823641009F2EAF /* Frameworks */,
 				CB3B5DBC1F823641009F2EAF /* Resources */,
+				9CF6B005680D5A975AB7811F /* [CP] Embed Pods Frameworks */,
+				738EBE6AB6B00A427F07D0F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB3B5DD81F823641009F2EAF /* Build configuration list for PBXNativeTarget "Fort Knox BalanceUITests" */;
 			buildPhases = (
+				FB688F8595B04C66D6A59AC4 /* [CP] Check Pods Manifest.lock */,
 				CB3B5DC51F823641009F2EAF /* Sources */,
 				CB3B5DC61F823641009F2EAF /* Frameworks */,
 				CB3B5DC71F823641009F2EAF /* Resources */,
+				D574B7E47FC2A3DDD24BBC05 /* [CP] Embed Pods Frameworks */,
+				0B2C6A89CB4C31772EE07DA1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +305,158 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B2C6A89CB4C31772EE07DA1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fort Knox BalanceUITests/Pods-Fort Knox BalanceUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D32D998B10E46DDC78AD1FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fort Knox Balance-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		738EBE6AB6B00A427F07D0F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fort Knox BalanceTests/Pods-Fort Knox BalanceTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CF6B005680D5A975AB7811F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fort Knox BalanceTests/Pods-Fort Knox BalanceTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A09D656055B51FDC4D03754C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Fort Knox Balance/Pods-Fort Knox Balance-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fort Knox Balance/Pods-Fort Knox Balance-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5445BD74EEF09745EE762A4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fort Knox Balance/Pods-Fort Knox Balance-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE515E88003A2AC272D9F91B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fort Knox BalanceTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D574B7E47FC2A3DDD24BBC05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fort Knox BalanceUITests/Pods-Fort Knox BalanceUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB688F8595B04C66D6A59AC4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fort Knox BalanceUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CB3B5DA61F823640009F2EAF /* Sources */ = {
@@ -415,10 +616,12 @@
 		};
 		CB3B5DD31F823641009F2EAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D883BF52E00999336CDDE35 /* Pods-Fort Knox Balance.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TA2RGD8TL5;
 				INFOPLIST_FILE = "Fort Knox Balance/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fortknox.balance.Fort-Knox-Balance";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,10 +631,12 @@
 		};
 		CB3B5DD41F823641009F2EAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C67B830913BCFB1C36DB1FA /* Pods-Fort Knox Balance.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TA2RGD8TL5;
 				INFOPLIST_FILE = "Fort Knox Balance/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fortknox.balance.Fort-Knox-Balance";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,6 +646,7 @@
 		};
 		CB3B5DD61F823641009F2EAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39A8B6A53CC188B43DB1AB28 /* Pods-Fort Knox BalanceTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -456,6 +662,7 @@
 		};
 		CB3B5DD71F823641009F2EAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D98BB9B66F7A06E88216D9D /* Pods-Fort Knox BalanceTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +678,7 @@
 		};
 		CB3B5DD91F823641009F2EAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A62219E171FEC0BBE806C038 /* Pods-Fort Knox BalanceUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = TA2RGD8TL5;
@@ -485,6 +693,7 @@
 		};
 		CB3B5DDA1F823641009F2EAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D26705350350C1D8372B052 /* Pods-Fort Knox BalanceUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = TA2RGD8TL5;
