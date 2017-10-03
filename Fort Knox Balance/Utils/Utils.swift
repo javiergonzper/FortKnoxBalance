@@ -8,7 +8,14 @@
 
 import UIKit
 
-class Utils: NSObject {
+final class Utils {
+    
+    // Can't init is singleton
+    private init() { }
+    
+    // MARK: Shared Instance
+    
+    static let shared = Utils()
 
     /*
      * Return "Year XXXX"

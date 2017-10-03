@@ -13,15 +13,22 @@ struct FramesSizes {
     static let NavigationBarView:CGFloat = 44.0
 }
 
-struct UITableViewCellsIds {
+struct StoryboardIds {
     
+    //Cells
     static let yearUiTableViewCell = "YearUiTableViewCell"
+    static let monthBalanceTableViewCell = "MonthBalanceTableViewCell"
+    
+    //ViewControllers
+    static let detailViewController = "detailViewController"
     
 }
 
 struct Colors {
     static let navigationBarBackgroundColor = UIColor.groupTableViewBackground
     static let loadingAnimationColor = UIColor.lightGray
+    static let monthDateViewColor = UIColor.init ( red: 228.0/255.0, green: 46.0/255.0, blue: 46.0/255.0, alpha: 1.0 )
+    
 }
 
 struct JSONDataInfo {

@@ -15,6 +15,9 @@
 		CB3B5DB81F823641009F2EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3B5DB61F823641009F2EAF /* LaunchScreen.storyboard */; };
 		CB3B5DC31F823641009F2EAF /* Fort_Knox_BalanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B5DC21F823641009F2EAF /* Fort_Knox_BalanceTests.swift */; };
 		CB3B5DCE1F823641009F2EAF /* Fort_Knox_BalanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B5DCD1F823641009F2EAF /* Fort_Knox_BalanceUITests.swift */; };
+		CB6D1D761F83D83F00F749E1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D1D751F83D83F00F749E1 /* DetailViewController.swift */; };
+		CB6D1D781F83D9C300F749E1 /* UtilsJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D1D771F83D9C300F749E1 /* UtilsJSON.swift */; };
+		CB6D1D7A1F83E73300F749E1 /* MonthBalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D1D791F83E73300F749E1 /* MonthBalanceTableViewCell.swift */; };
 		CBF55DA51F82563A00D08915 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DA71F82563A00D08915 /* Localizable.strings */; };
 		CBF55DAB1F82579B00D08915 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DAA1F82579B00D08915 /* Info.plist */; };
 		CBF55DAE1F8257AB00D08915 /* 2016-treasury_1.json in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DAC1F8257AB00D08915 /* 2016-treasury_1.json */; };
@@ -68,6 +71,9 @@
 		CB3B5DC91F823641009F2EAF /* Fort Knox BalanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fort Knox BalanceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3B5DCD1F823641009F2EAF /* Fort_Knox_BalanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fort_Knox_BalanceUITests.swift; sourceTree = "<group>"; };
 		CB3B5DCF1F823641009F2EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB6D1D751F83D83F00F749E1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Views/DetailViewController.swift; sourceTree = "<group>"; };
+		CB6D1D771F83D9C300F749E1 /* UtilsJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UtilsJSON.swift; path = Utils/UtilsJSON.swift; sourceTree = "<group>"; };
+		CB6D1D791F83E73300F749E1 /* MonthBalanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthBalanceTableViewCell.swift; path = Cells/MonthBalanceTableViewCell.swift; sourceTree = "<group>"; };
 		CBF55DA61F82563A00D08915 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CBF55DA81F82566A00D08915 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CBF55DAA1F82579B00D08915 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
@@ -158,10 +164,10 @@
 			isa = PBXGroup;
 			children = (
 				CB3B5DAD1F823640009F2EAF /* AppDelegate.swift */,
-				CB3B5DAF1F823640009F2EAF /* HomeViewController.swift */,
 				CB3B5DB11F823641009F2EAF /* Main.storyboard */,
 				CB3B5DB41F823641009F2EAF /* Assets.xcassets */,
 				CB3B5DB61F823641009F2EAF /* LaunchScreen.storyboard */,
+				CB6D1D741F83D7E600F749E1 /* Views */,
 				CBF55DB41F825D5D00D08915 /* Cells */,
 				CBF55DBB1F827CBF00D08915 /* Utils */,
 				CBF55DA41F8255C800D08915 /* Supporting Files */,
@@ -188,6 +194,15 @@
 			path = "Fort Knox BalanceUITests";
 			sourceTree = "<group>";
 		};
+		CB6D1D741F83D7E600F749E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB3B5DAF1F823640009F2EAF /* HomeViewController.swift */,
+				CB6D1D751F83D83F00F749E1 /* DetailViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		CBF55DA41F8255C800D08915 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				CBF55DB71F825DE100D08915 /* YearUiTableViewCell.swift */,
+				CB6D1D791F83E73300F749E1 /* MonthBalanceTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -221,6 +237,7 @@
 				CBF55DBC1F827E3600D08915 /* Constants.swift */,
 				CBF55DBE1F82872300D08915 /* ParentViewController.swift */,
 				CBF55DC51F82E0DE00D08915 /* Utils.swift */,
+				CB6D1D771F83D9C300F749E1 /* UtilsJSON.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -539,6 +556,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6D1D761F83D83F00F749E1 /* DetailViewController.swift in Sources */,
+				CB6D1D781F83D9C300F749E1 /* UtilsJSON.swift in Sources */,
 				CBF55DB81F825DE100D08915 /* YearUiTableViewCell.swift in Sources */,
 				CBF55DC41F82D7DD00D08915 /* TreasuryGraph.swift in Sources */,
 				CBF55DC21F828F1900D08915 /* YearFile.swift in Sources */,
@@ -546,6 +565,7 @@
 				CB3B5DB01F823640009F2EAF /* HomeViewController.swift in Sources */,
 				CB3B5DAE1F823640009F2EAF /* AppDelegate.swift in Sources */,
 				CBF55DBD1F827E3600D08915 /* Constants.swift in Sources */,
+				CB6D1D7A1F83E73300F749E1 /* MonthBalanceTableViewCell.swift in Sources */,
 				CBF55DC61F82E0DE00D08915 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

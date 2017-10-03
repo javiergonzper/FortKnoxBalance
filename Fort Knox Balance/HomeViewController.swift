@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import SwiftyJSON
 import Charts
 
 class HomeViewController: ParentViewController, UITableViewDataSource, UITableViewDelegate, ChartViewDelegate {
 
+    //Navigation bar
     @IBOutlet var navigationBarTitleButton: UIButton!
     @IBOutlet var yearTableView: UITableView!
     
@@ -20,6 +20,7 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
     @IBOutlet var treasureYearLabel: UILabel!
     @IBOutlet var chartView: LineChartView!
     
+    //Globar vars
     var selectedYearFile:YearFile?
     var arrayTreasureGraphToShow:[TreasuryGraph] = []
     
@@ -27,10 +28,8 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.loadInormationByYearFile(yearFile: selectedYearFile!)
-        self.initilizeChartView()
-        
         self.applyStyles()
+        self.refreshInterface()
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,19 +44,35 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         navigationBarTitleButton.layer.cornerRadius = 0
         navigationBarTitleButton.layer.borderWidth = 1
         navigationBarTitleButton.layer.borderColor = UIColor.black.cgColor
-        navigationBarTitleButton.setTitle(Utils().getYearString(yearFile: selectedYearFile!), for: UIControlState.normal)
+    }
+    
+    //Bottom buttons
+    @IBAction func infoButtonTapped () {
+        
+    }
+    
+    @IBAction func nextButtonTapped () {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: StoryboardIds.detailViewController)
+        
+        present(controller, animated: true, completion: nil)
+    }
+    
+    func refreshInterface() {
+    
+        arrayTreasureGraphToShow.removeAll()
+        arrayTreasureGraphToShow = UtilsJSON.shared.loadInormationByYearFile(yearFile: selectedYearFile!)
+        self.initilizeChartView()
+        
+        navigationBarTitleButton.setTitle(Utils.shared.getYearString(yearFile: selectedYearFile!), for: UIControlState.normal)
         
         yearTableView.backgroundColor = Colors.navigationBarBackgroundColor
         
-        moneyValueLabel.text = String(Utils().getTotalAccumulateByYear(arrayTreasureGraph: arrayTreasureGraphToShow)) + Utils().getLocaleCurrencySymbol()
-        treasureYearLabel.text = Utils().getTreasureString(yearFile: selectedYearFile!)
+        moneyValueLabel.text = String(Utils.shared.getTotalAccumulateByYear(arrayTreasureGraph: arrayTreasureGraphToShow)) + Utils.shared.getLocaleCurrencySymbol()
+        treasureYearLabel.text = Utils.shared.getTreasureString(yearFile: selectedYearFile!)
     }
     
     func loadData() {
-        
-        
-        
-        
         
         /*let delay = DispatchTime.now() + 2
         DispatchQueue.main.asyncAfter(deadline: delay) {
@@ -80,16 +95,20 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCellsIds.yearUiTableViewCell, for: indexPath) as! YearUiTableViewCell
-        cell.title.text = Utils().getYearString(yearFile: JSONDataInfo.allYearsAndFilesAvailable[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardIds.yearUiTableViewCell, for: indexPath) as! YearUiTableViewCell
+        cell.title.text = Utils.shared.getYearString(yearFile: JSONDataInfo.allYearsAndFilesAvailable[indexPath.row])
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        self.selectedYearFile = JSONDataInfo.allYearsAndFilesAvailable[indexPath.row]
+        self.refreshInterface()
     }
     
+    //MARK: - NavigationBar
     @IBAction func didTapNavigationBarTitleButton() {
         
         let maxNumberRowsVisible:CGFloat = 4.0
@@ -125,42 +144,6 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         }, completion: { (finished) -> Void in
             // ....
         })
-    }
-    
-    //MARK: - JSON Information
-    func loadInormationByYearFile(yearFile:YearFile) {
-        
-        if let file = Bundle.main.path(forResource: yearFile.fileName, ofType: yearFile.fileType) {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: file))
-                let json = JSON(data: data)
-                
-                let outputData = json.dictionary!["outputData"]
-                let treasuryDataGraph = outputData!.dictionary!["TreasuryDataGraph"]
-                let treasuryDataGraphRepeated = treasuryDataGraph!.dictionary!["TreasuryGraphData"]
-                let treasuryGraph = treasuryDataGraphRepeated!.dictionary!["TreasuryGraph"]
-                
-                for current in treasuryGraph! {
-                    
-                    let year:Int = Int((current.1.dictionary!["Year"]?.description)!)!
-                    
-                    //Clean the JSON
-                    if year == selectedYearFile?.year {
-                        
-                        let month:Int = Int((current.1.dictionary!["Month"]?.description)!)!
-                        let accumulatedBalance:Float = Float((current.1.dictionary!["AccumulatedBalance"]?.description)!)!
-                        
-                        arrayTreasureGraphToShow.append(TreasuryGraph(year: year, month: month, accumulatedBalance: accumulatedBalance))
-                    }
-                    
-                }
-                
-            } catch {
-                print("Error getting JSON")
-            }
-        } else {
-            print("File does not exist: " + yearFile.fileName! + yearFile.fileType!)
-        }
     }
     
     //MARK: - Charts
