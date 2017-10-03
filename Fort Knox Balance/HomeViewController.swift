@@ -8,11 +8,17 @@
 
 import UIKit
 import SwiftyJSON
+import Charts
 
-class HomeViewController: ParentViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: ParentViewController, UITableViewDataSource, UITableViewDelegate, ChartViewDelegate {
 
     @IBOutlet var navigationBarTitleButton: UIButton!
     @IBOutlet var yearTableView: UITableView!
+    
+    //Chart
+    @IBOutlet var moneyValueLabel: UILabel!
+    @IBOutlet var treasureYearLabel: UILabel!
+    @IBOutlet var chartView: LineChartView!
     
     var selectedYearFile:YearFile?
     var arrayTreasureGraphToShow:[TreasuryGraph] = []
@@ -21,8 +27,10 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.applyStyles()
         self.loadInormationByYearFile(yearFile: selectedYearFile!)
+        self.initilizeChartView()
+        
+        self.applyStyles()
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,6 +48,9 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         navigationBarTitleButton.setTitle(Utils().getYearString(yearFile: selectedYearFile!), for: UIControlState.normal)
         
         yearTableView.backgroundColor = Colors.navigationBarBackgroundColor
+        
+        moneyValueLabel.text = String(Utils().getTotalAccumulateByYear(arrayTreasureGraph: arrayTreasureGraphToShow)) + Utils().getLocaleCurrencySymbol()
+        treasureYearLabel.text = Utils().getTreasureString(yearFile: selectedYearFile!)
     }
     
     func loadData() {
@@ -152,4 +163,24 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         }
     }
     
+    //MARK: - Charts
+    
+    func initilizeChartView() {
+        
+        chartView.pinchZoomEnabled = false
+        chartView.doubleTapToZoomEnabled = false
+        chartView.chartDescription?.text = ""
+        
+        var dataEntries: [ChartDataEntry] = []
+        
+        for i in 0..<arrayTreasureGraphToShow.count {
+            let dataEntry = ChartDataEntry(x: Double(i), y: Double(arrayTreasureGraphToShow[i].accumulatedBalance!), data: "Pepe" as AnyObject)
+                dataEntries.append(dataEntry)
+        }
+        
+        let chartDataSet = LineChartDataSet(values: dataEntries, label: "Units Sold")
+        let chartData = LineChartData(dataSet: chartDataSet)
+        chartView.data = chartData
+        
+    }
 }
