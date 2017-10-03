@@ -6,17 +6,17 @@
 //  Copyright © 2017 Treasire Inc. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class TreasuryGraph: NSObject {
 
     var year: Int?
-    var month: Int?
+    var month: MonthData?
     var accumulatedBalance: Float?
     
     init(year: Int, month: Int, accumulatedBalance: Float) {
         self.year = year
-        self.month = month
+        self.month = Months.allMonths[month]
         self.accumulatedBalance = accumulatedBalance
     }
     

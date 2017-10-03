@@ -69,6 +69,8 @@ class DetailViewController: ParentViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardIds.monthBalanceTableViewCell, for: indexPath) as! MonthBalanceTableViewCell
         
         cell.balanceValueLabel.text = String(arrayOfArraysTreasureGraphToShow[indexPath.section][indexPath.row].accumulatedBalance!)
+        cell.monthDateLabel.text = (arrayOfArraysTreasureGraphToShow[indexPath.section][indexPath.row].month?.dateFormatted)! + String(JSONDataInfo.allYearsAndFilesAvailable[indexPath.section].year!)
+        cell.monthTextLabel.text = arrayOfArraysTreasureGraphToShow[indexPath.section][indexPath.row].month?.name
         
         return cell
     }

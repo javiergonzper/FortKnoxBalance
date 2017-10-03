@@ -232,9 +232,8 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5N6-H3-Wun">
                                                             <rect key="frame" x="0.0" y="0.0" width="74" height="17"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAe-6M-0nd">
-                                                                    <rect key="frame" x="16" y="2" width="41" height="14"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAe-6M-0nd">
+                                                                    <rect key="frame" x="4" y="2" width="67" height="14"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -242,13 +241,17 @@
                                                             </subviews>
                                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="SAe-6M-0nd" secondAttribute="trailing" constant="3" id="Thk-n4-du2"/>
+                                                                <constraint firstItem="SAe-6M-0nd" firstAttribute="leading" secondItem="5N6-H3-Wun" secondAttribute="leading" constant="4" id="VFA-k8-pcZ"/>
+                                                                <constraint firstItem="SAe-6M-0nd" firstAttribute="top" secondItem="5N6-H3-Wun" secondAttribute="top" constant="2" id="hsv-ZJ-Mdj"/>
+                                                                <constraint firstAttribute="bottom" secondItem="SAe-6M-0nd" secondAttribute="bottom" constant="1" id="lFm-Mb-ebk"/>
                                                                 <constraint firstAttribute="width" constant="74" id="obF-Z9-690"/>
                                                                 <constraint firstAttribute="height" constant="17" id="sQa-Bn-2e0"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSd-Ew-BXf">
                                                             <rect key="frame" x="3" y="20" width="68" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -287,7 +290,7 @@
                                             <outlet property="balanceValueLabel" destination="fH3-Bc-xio" id="OIR-W8-kZA"/>
                                             <outlet property="monthDateLabel" destination="SAe-6M-0nd" id="bnq-zZ-Hjf"/>
                                             <outlet property="monthDateView" destination="5N6-H3-Wun" id="Usa-EM-5N0"/>
-                                            <outlet property="monthText" destination="XSd-Ew-BXf" id="OT6-xR-N3d"/>
+                                            <outlet property="monthTextLabel" destination="XSd-Ew-BXf" id="HDY-HX-kOk"/>
                                             <outlet property="monthView" destination="TWS-Yd-LAc" id="9h1-sn-NcW"/>
                                         </connections>
                                     </tableViewCell>

@@ -12,7 +12,7 @@ class MonthBalanceTableViewCell: UITableViewCell {
     
     @IBOutlet var balanceValueLabel: UILabel!
     @IBOutlet var monthDateLabel: UILabel!
-    @IBOutlet var monthText: UILabel!
+    @IBOutlet var monthTextLabel: UILabel!
 
     @IBOutlet var monthDateView: UIView!
     @IBOutlet var monthView: UIView!

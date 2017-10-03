@@ -18,6 +18,7 @@
 		CB6D1D761F83D83F00F749E1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D1D751F83D83F00F749E1 /* DetailViewController.swift */; };
 		CB6D1D781F83D9C300F749E1 /* UtilsJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D1D771F83D9C300F749E1 /* UtilsJSON.swift */; };
 		CB6D1D7A1F83E73300F749E1 /* MonthBalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D1D791F83E73300F749E1 /* MonthBalanceTableViewCell.swift */; };
+		CB6D1D7C1F83ED5600F749E1 /* MonthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D1D7B1F83ED5600F749E1 /* MonthData.swift */; };
 		CBF55DA51F82563A00D08915 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DA71F82563A00D08915 /* Localizable.strings */; };
 		CBF55DAB1F82579B00D08915 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DAA1F82579B00D08915 /* Info.plist */; };
 		CBF55DAE1F8257AB00D08915 /* 2016-treasury_1.json in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DAC1F8257AB00D08915 /* 2016-treasury_1.json */; };
@@ -74,6 +75,7 @@
 		CB6D1D751F83D83F00F749E1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Views/DetailViewController.swift; sourceTree = "<group>"; };
 		CB6D1D771F83D9C300F749E1 /* UtilsJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UtilsJSON.swift; path = Utils/UtilsJSON.swift; sourceTree = "<group>"; };
 		CB6D1D791F83E73300F749E1 /* MonthBalanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthBalanceTableViewCell.swift; path = Cells/MonthBalanceTableViewCell.swift; sourceTree = "<group>"; };
+		CB6D1D7B1F83ED5600F749E1 /* MonthData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthData.swift; path = "Utils/Data Objects/MonthData.swift"; sourceTree = "<group>"; };
 		CBF55DA61F82563A00D08915 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CBF55DA81F82566A00D08915 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CBF55DAA1F82579B00D08915 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			children = (
 				CBF55DC11F828F1900D08915 /* YearFile.swift */,
 				CBF55DC31F82D7DD00D08915 /* TreasuryGraph.swift */,
+				CB6D1D7B1F83ED5600F749E1 /* MonthData.swift */,
 			);
 			name = "Data Obects";
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				CBF55DC41F82D7DD00D08915 /* TreasuryGraph.swift in Sources */,
 				CBF55DC21F828F1900D08915 /* YearFile.swift in Sources */,
 				CBF55DBF1F82872300D08915 /* ParentViewController.swift in Sources */,
+				CB6D1D7C1F83ED5600F749E1 /* MonthData.swift in Sources */,
 				CB3B5DB01F823640009F2EAF /* HomeViewController.swift in Sources */,
 				CB3B5DAE1F823640009F2EAF /* AppDelegate.swift in Sources */,
 				CBF55DBD1F827E3600D08915 /* Constants.swift in Sources */,
