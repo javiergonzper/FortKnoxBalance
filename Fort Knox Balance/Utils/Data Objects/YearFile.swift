@@ -10,11 +10,11 @@ import Foundation
 
 class YearFile: NSObject {
     
-    var year: NSNumber?
+    var year: Int?
     var fileName: String?
     var fileType: String?
     
-    init(year: NSNumber, fileName: String, fileType: String) {
+    init(year: Int, fileName: String, fileType: String) {
         self.year = year
         self.fileName = fileName
         self.fileType = fileType

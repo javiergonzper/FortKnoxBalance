@@ -14,14 +14,15 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
     @IBOutlet var navigationBarTitleButton: UIButton!
     @IBOutlet var yearTableView: UITableView!
     
-    var listYearsAvailable:NSMutableArray?
+    var selectedYearFile:YearFile?
+    var arrayTreasureGraphToShow:[TreasuryGraph] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         self.applyStyles()
-        self.loadData()
+        self.loadInormationByYearFile(yearFile: selectedYearFile!)
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,7 +37,7 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         navigationBarTitleButton.layer.cornerRadius = 0
         navigationBarTitleButton.layer.borderWidth = 1
         navigationBarTitleButton.layer.borderColor = UIColor.black.cgColor
-        navigationBarTitleButton.setTitle(NSLocalizedString("Home_View_Title_Year", comment: ""), for: UIControlState.normal)
+        navigationBarTitleButton.setTitle(Utils().getYearString(yearFile: selectedYearFile!), for: UIControlState.normal)
         
         yearTableView.backgroundColor = Colors.navigationBarBackgroundColor
     }
@@ -69,7 +70,7 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCellsIds.yearUiTableViewCell, for: indexPath) as! YearUiTableViewCell
-        cell.title.text = JSONDataInfo.allYearsAndFilesAvailable[indexPath.row].year?.stringValue
+        cell.title.text = Utils().getYearString(yearFile: JSONDataInfo.allYearsAndFilesAvailable[indexPath.row])
         
         return cell
     }
@@ -121,12 +122,34 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         if let file = Bundle.main.path(forResource: yearFile.fileName, ofType: yearFile.fileType) {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: file))
-                let json = try JSON(data: data)
+                let json = JSON(data: data)
+                
+                let outputData = json.dictionary!["outputData"]
+                let treasuryDataGraph = outputData!.dictionary!["TreasuryDataGraph"]
+                let treasuryDataGraphRepeated = treasuryDataGraph!.dictionary!["TreasuryGraphData"]
+                let treasuryGraph = treasuryDataGraphRepeated!.dictionary!["TreasuryGraph"]
+                
+                for current in treasuryGraph! {
+                    
+                    let year:Int = Int((current.1.dictionary!["Year"]?.description)!)!
+                    
+                    //Clean the JSON
+                    if year == selectedYearFile?.year {
+                        
+                        let month:Int = Int((current.1.dictionary!["Month"]?.description)!)!
+                        let accumulatedBalance:Float = Float((current.1.dictionary!["AccumulatedBalance"]?.description)!)!
+                        
+                        arrayTreasureGraphToShow.append(TreasuryGraph(year: year, month: month, accumulatedBalance: accumulatedBalance))
+                    }
+                    
+                }
+                
             } catch {
                 print("Error getting JSON")
             }
         } else {
-            
+            print("File does not exist: " + yearFile.fileName! + yearFile.fileType!)
         }
     }
+    
 }
