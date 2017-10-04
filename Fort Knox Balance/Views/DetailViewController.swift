@@ -67,6 +67,10 @@ class DetailViewController: ParentViewController, UITableViewDataSource, UITable
         return 0
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 22
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardIds.monthBalanceTableViewCell, for: indexPath) as! MonthBalanceTableViewCell
         
