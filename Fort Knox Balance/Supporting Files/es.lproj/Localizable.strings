@@ -7,8 +7,11 @@
  */
 
 //Home View
-"Home_View_Title_Year" = "Year";
-"Treasure" = "Tesoreria";
+"Home_View_Title_Year" = "Año $year";
+"Treasure" = "Tesoreria ";
+
+//Detail View
+"the_data_of_year" = "Los datos del año $year";
 
 //System
 "Back" = "Atrás";

@@ -33,18 +33,18 @@ struct Colors {
 
 struct Months {
     static let allMonths:Array = [MonthData(name: "", dateFormatted: "01/00/"), //Dummy month
-                                  MonthData(name: NSLocalizedString("January", comment: ""), dateFormatted: "01/01/"),
-                                  MonthData(name: NSLocalizedString("February", comment: ""), dateFormatted: "01/02/"),
-                                  MonthData(name: NSLocalizedString("March", comment: ""), dateFormatted: "01/03/"),
-                                  MonthData(name: NSLocalizedString("April", comment: ""), dateFormatted: "01/04/"),
-                                  MonthData(name: NSLocalizedString("May", comment: ""), dateFormatted: "01/05/"),
-                                  MonthData(name: NSLocalizedString("June", comment: ""), dateFormatted: "01/06/"),
-                                  MonthData(name: NSLocalizedString("July", comment: ""), dateFormatted: "01/07/"),
-                                  MonthData(name: NSLocalizedString("August", comment: ""), dateFormatted: "01/08/"),
-                                  MonthData(name: NSLocalizedString("September", comment: ""), dateFormatted: "01/09/"),
-                                  MonthData(name: NSLocalizedString("October", comment: ""), dateFormatted: "01/10/"),
-                                  MonthData(name: NSLocalizedString("November", comment: ""), dateFormatted: "01/11/"),
-                                  MonthData(name: NSLocalizedString("December", comment: ""), dateFormatted: "01/12/"),
+                                  MonthData(name: "January".localized(), dateFormatted: "01/01/"),
+                                  MonthData(name: "February".localized(), dateFormatted: "01/02/"),
+                                  MonthData(name: "March".localized(), dateFormatted: "01/03/"),
+                                  MonthData(name: "April".localized(), dateFormatted: "01/04/"),
+                                  MonthData(name: "May".localized(), dateFormatted: "01/05/"),
+                                  MonthData(name: "June".localized(), dateFormatted: "01/06/"),
+                                  MonthData(name: "July".localized(), dateFormatted: "01/07/"),
+                                  MonthData(name: "August".localized(), dateFormatted: "01/08/"),
+                                  MonthData(name: "September".localized(), dateFormatted: "01/09/"),
+                                  MonthData(name: "October".localized(), dateFormatted: "01/10/"),
+                                  MonthData(name: "November".localized(), dateFormatted: "01/11/"),
+                                  MonthData(name: "December".localized(), dateFormatted: "01/12/"),
                                   ]
 }
 

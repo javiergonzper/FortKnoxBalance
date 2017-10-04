@@ -30,7 +30,8 @@ class DetailViewController: ParentViewController, UITableViewDataSource, UITable
     }
     
     func applySyles() {
-        backButton.setTitle(NSLocalizedString("Back", comment: ""), for: UIControlState.normal)
+        backButton.setTitle("Back".localized(), for: UIControlState.normal)
+        titleNavigationBarLabel.text = "the_data_of_year".localizedYear(year: JSONDataInfo.allYearsAndFilesAvailable[0].year!)
     }
     
     func loadAllYears() {
@@ -61,14 +62,15 @@ class DetailViewController: ParentViewController, UITableViewDataSource, UITable
         return 44
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 22
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardIds.monthBalanceTableViewCell, for: indexPath) as! MonthBalanceTableViewCell
         
-        cell.balanceValueLabel.text = String(arrayOfArraysTreasureGraphToShow[indexPath.section][indexPath.row].accumulatedBalance!)
+        cell.balanceValueLabel.text = String(arrayOfArraysTreasureGraphToShow[indexPath.section][indexPath.row].accumulatedBalance!) + Utils.shared.getLocaleCurrencySymbol()
+        cell.balanceValueLabel.changeSizeDollarEuroCharacter(size: 20.0)
         cell.monthDateLabel.text = (arrayOfArraysTreasureGraphToShow[indexPath.section][indexPath.row].month?.dateFormatted)! + String(JSONDataInfo.allYearsAndFilesAvailable[indexPath.section].year!)
         cell.monthTextLabel.text = arrayOfArraysTreasureGraphToShow[indexPath.section][indexPath.row].month?.name
         
@@ -80,5 +82,15 @@ class DetailViewController: ParentViewController, UITableViewDataSource, UITable
         
     }
     
+    //MARK - UIScrollViewDelegate
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if let visibleRows = allYearsDataTableView.indexPathsForVisibleRows {
+            let visibleSections = visibleRows.map({$0.section})
+            
+            titleNavigationBarLabel.text = "the_data_of_year".localizedYear(year: JSONDataInfo.allYearsAndFilesAvailable[visibleSections[0]].year!)
+        }
+        
+    }
 
 }

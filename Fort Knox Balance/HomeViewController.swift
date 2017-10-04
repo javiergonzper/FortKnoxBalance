@@ -14,6 +14,7 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
     //Navigation bar
     @IBOutlet var navigationBarTitleButton: UIButton!
     @IBOutlet var yearTableView: UITableView!
+    @IBOutlet var disableView:UIView!
     
     //Chart
     @IBOutlet var moneyValueLabel: UILabel!
@@ -23,6 +24,7 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
     //Globar vars
     var selectedYearFile:YearFile?
     var arrayTreasureGraphToShow:[TreasuryGraph] = []
+    let animationShowHiddeYearTableViewDuration = 0.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,8 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         navigationBarTitleButton.layer.cornerRadius = 0
         navigationBarTitleButton.layer.borderWidth = 1
         navigationBarTitleButton.layer.borderColor = UIColor.black.cgColor
+        
+        disableView.isHidden = true
     }
     
     //Bottom buttons
@@ -64,20 +68,13 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         arrayTreasureGraphToShow = UtilsJSON.shared.loadInormationByYearFile(yearFile: selectedYearFile!)
         self.initilizeChartView()
         
-        navigationBarTitleButton.setTitle(Utils.shared.getYearString(yearFile: selectedYearFile!), for: UIControlState.normal)
+        navigationBarTitleButton.setTitle("Home_View_Title_Year".localizedYear(year: (selectedYearFile?.year)!), for: UIControlState.normal)
         
         yearTableView.backgroundColor = Colors.navigationBarBackgroundColor
         
         moneyValueLabel.text = String(Utils.shared.getTotalAccumulateByYear(arrayTreasureGraph: arrayTreasureGraphToShow)) + Utils.shared.getLocaleCurrencySymbol()
-        treasureYearLabel.text = Utils.shared.getTreasureString(yearFile: selectedYearFile!)
-    }
-    
-    func loadData() {
-        
-        /*let delay = DispatchTime.now() + 2
-        DispatchQueue.main.asyncAfter(deadline: delay) {
-            seFlf.stopAnimating()
-        }*/
+        moneyValueLabel.changeSizeDollarEuroCharacter(size: 12.0)
+        treasureYearLabel.text = "Treasure".localizedYear(year: selectedYearFile!.year!)
     }
 
     // MARK: - Table view data source
@@ -96,7 +93,7 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardIds.yearUiTableViewCell, for: indexPath) as! YearUiTableViewCell
-        cell.title.text = Utils.shared.getYearString(yearFile: JSONDataInfo.allYearsAndFilesAvailable[indexPath.row])
+        cell.title.text = "Home_View_Title_Year".localizedYear(year: JSONDataInfo.allYearsAndFilesAvailable[indexPath.row].year!)
         
         return cell
     }
@@ -105,7 +102,14 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         tableView.deselectRow(at: indexPath, animated: true)
         
         self.selectedYearFile = JSONDataInfo.allYearsAndFilesAvailable[indexPath.row]
-        self.refreshInterface()
+        self.didTapNavigationBarTitleButton()
+        
+        self.startAnimating()
+        let when = DispatchTime.now() + animationShowHiddeYearTableViewDuration
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.refreshInterface()
+            self.stopAnimating()
+        }
     }
     
     //MARK: - NavigationBar
@@ -115,8 +119,11 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         var yPositionYearTableView:CGFloat!
         let heightStatusBar = UIApplication.shared.statusBarFrame.size.height
         
+        var isYearTableViewVisible:Bool!
+        
         if self.yearTableView.frame.origin.y < 0 {
             //To be visisble
+            isYearTableViewVisible = true
             
             yPositionYearTableView = heightStatusBar + FramesSizes.YearUITableViewCell
             
@@ -134,15 +141,34 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         } else {
             //To be hidden
             yPositionYearTableView = -(UIApplication.shared.statusBarFrame.size.height + FramesSizes.YearUITableViewCell * maxNumberRowsVisible)
+            isYearTableViewVisible = false
         }
         
-        UIView.animate(withDuration: 0.5,
+        //Animation
+        self.animationToShowOrHiddeYearTableView(isYearTableViewVisible: isYearTableViewVisible, yPositionYearTableView: yPositionYearTableView)
+    }
+    
+    func animationToShowOrHiddeYearTableView(isYearTableViewVisible: Bool, yPositionYearTableView: CGFloat) {
+        UIView.animate(withDuration: animationShowHiddeYearTableViewDuration,
                        delay: 0.0,
                        options: UIViewAnimationOptions.curveEaseIn,
                        animations: { () -> Void in
                         self.yearTableView.frame.origin.y = yPositionYearTableView
         }, completion: { (finished) -> Void in
-            // ....
+            if isYearTableViewVisible {
+                self.disableView.isHidden = false
+                UIView.animate(withDuration: 0.2, delay: 0, options: [], animations: {
+                    self.disableView.alpha = 0.7
+                }, completion: { _ in
+                    
+                })
+            } else {
+                UIView.animate(withDuration: 0.2, delay: 0, options: [], animations: {
+                    self.disableView.alpha = 0.0
+                }, completion: { _ in
+                    self.disableView.isHidden = true
+                })
+            }
         })
     }
     

@@ -16,22 +16,6 @@ final class Utils {
     // MARK: Shared Instance
     
     static let shared = Utils()
-
-    /*
-     * Return "Year XXXX"
-     * This method could be modified to support countries that could use a different format like "XXXX Year"
-     */
-    func getYearString(yearFile:YearFile) -> String {
-        return NSLocalizedString("Home_View_Title_Year", comment: "") + " " + String(yearFile.year!)
-    }
-    
-    /*
-     * Return "Treasure XXXX"
-     * This method could be modified to support countries that could use a different format like "XXXX Treasure"
-     */
-    func getTreasureString(yearFile:YearFile) -> String {
-        return NSLocalizedString("Treasure", comment: "") + " " + String(yearFile.year!)
-    }
     
     /*
      * Return $, €... from the Locale
