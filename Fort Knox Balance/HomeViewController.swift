@@ -181,20 +181,42 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
     
     func initilizeChartView() {
         
+        var valueColors = [UIColor]()
+        
         chartView.pinchZoomEnabled = false
         chartView.doubleTapToZoomEnabled = false
         chartView.chartDescription?.text = ""
+        chartView.legend.enabled = false
+        chartView.xAxis.drawGridLinesEnabled = false
         
         var dataEntries: [ChartDataEntry] = []
         
         for i in 0..<arrayTreasureGraphToShow.count {
-            let dataEntry = ChartDataEntry(x: Double(i), y: Double(arrayTreasureGraphToShow[i].accumulatedBalance!), data: "Pepe" as AnyObject)
+            let dataEntry = ChartDataEntry(x: Double(i), y: Double(arrayTreasureGraphToShow[i].accumulatedBalance!))
                 dataEntries.append(dataEntry)
+            valueColors.append(colorPicker(value: arrayTreasureGraphToShow[i].accumulatedBalance!))
         }
         
-        let chartDataSet = LineChartDataSet(values: dataEntries, label: "Units Sold")
+        let chartDataSet = LineChartDataSet(values: dataEntries, label: "")
+        chartDataSet.colors = valueColors
+        chartDataSet.drawCirclesEnabled = false
+        chartDataSet.drawValuesEnabled = false
+        chartDataSet.mode = .cubicBezier
+        
         let chartData = LineChartData(dataSet: chartDataSet)
         chartView.data = chartData
         
+    }
+    
+    func colorPicker(value : Float) -> UIColor {
+        
+        //input your own logic for how you actually want to color the x axis
+        if value <= -0.0 {
+            print("red")
+            return UIColor.red
+        } else {
+            print("green")
+            return UIColor.green
+        }
     }
 }

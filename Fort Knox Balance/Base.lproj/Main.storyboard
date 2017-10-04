@@ -241,7 +241,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="323" id="g4V-PU-h4r"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
