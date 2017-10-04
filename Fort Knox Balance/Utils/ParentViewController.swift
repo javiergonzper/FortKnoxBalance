@@ -11,12 +11,15 @@ import NVActivityIndicatorView
 
 class ParentViewController: UIViewController, NVActivityIndicatorViewable {
     
+    @IBOutlet var navigationBarView:UIView!
+    
     var activityIndicatorView:NVActivityIndicatorView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.applyStylesForNavigationBar()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +27,10 @@ class ParentViewController: UIViewController, NVActivityIndicatorViewable {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func applyStylesForNavigationBar() {
+        self.navigationBarView.backgroundColor = Colors.navigationBarBackgroundColor
+    }
+    
     /*
     // MARK: - Navigation
 

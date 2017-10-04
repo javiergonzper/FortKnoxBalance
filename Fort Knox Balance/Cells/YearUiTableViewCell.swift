@@ -16,7 +16,7 @@ class YearUiTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        self.backgroundColor = Colors.navigationBarBackgroundColor
+        self.backgroundColor = Colors.menuNavigationBarBackgroundColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

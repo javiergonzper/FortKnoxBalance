@@ -24,7 +24,6 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
     //Globar vars
     var selectedYearFile:YearFile?
     var arrayTreasureGraphToShow:[TreasuryGraph] = []
-    let animationShowHiddeYearTableViewDuration = 0.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +38,7 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         // Dispose of any resources that can be recreated.
     }
 
+    //MARK: - Interface render
     func applyStyles() {
         
         //Title/Button of the Navigation bar
@@ -50,7 +50,22 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         disableView.isHidden = true
     }
     
-    //Bottom buttons
+    func refreshInterface() {
+        
+        arrayTreasureGraphToShow.removeAll()
+        arrayTreasureGraphToShow = UtilsJSON.shared.loadInormationByYearFile(yearFile: selectedYearFile!)
+        self.initilizeChartView()
+        
+        navigationBarTitleButton.setTitle("Home_View_Title_Year".localizedYear(year: (selectedYearFile?.year)!), for: UIControlState.normal)
+        
+        yearTableView.backgroundColor = Colors.menuNavigationBarBackgroundColor
+        
+        moneyValueLabel.text = String(Utils.shared.getTotalAccumulateByYear(arrayTreasureGraph: arrayTreasureGraphToShow)) + Utils.shared.getLocaleCurrencySymbol()
+        moneyValueLabel.changeSizeDollarEuroCharacter(size: 12.0)
+        treasureYearLabel.text = "Treasure".localizedYear(year: selectedYearFile!.year!)
+    }
+    
+    //MARK: - Bottom buttons
     @IBAction func infoButtonTapped () {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: StoryboardIds.creditViewController)
@@ -63,21 +78,6 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         let controller = storyboard.instantiateViewController(withIdentifier: StoryboardIds.detailViewController)
         
         present(controller, animated: true, completion: nil)
-    }
-    
-    func refreshInterface() {
-    
-        arrayTreasureGraphToShow.removeAll()
-        arrayTreasureGraphToShow = UtilsJSON.shared.loadInormationByYearFile(yearFile: selectedYearFile!)
-        self.initilizeChartView()
-        
-        navigationBarTitleButton.setTitle("Home_View_Title_Year".localizedYear(year: (selectedYearFile?.year)!), for: UIControlState.normal)
-        
-        yearTableView.backgroundColor = Colors.navigationBarBackgroundColor
-        
-        moneyValueLabel.text = String(Utils.shared.getTotalAccumulateByYear(arrayTreasureGraph: arrayTreasureGraphToShow)) + Utils.shared.getLocaleCurrencySymbol()
-        moneyValueLabel.changeSizeDollarEuroCharacter(size: 12.0)
-        treasureYearLabel.text = "Treasure".localizedYear(year: selectedYearFile!.year!)
     }
 
     // MARK: - Table view data source
@@ -109,14 +109,14 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         
         //Animation
         self.startParentAnimating(view: self.chartView)
-        let when = DispatchTime.now() + animationShowHiddeYearTableViewDuration
+        let when = DispatchTime.now() + AnimationTimers.navigationBarMenuTimer
         DispatchQueue.main.asyncAfter(deadline: when) {
             self.refreshInterface()
             self.stopParentAnimating()
         }
     }
     
-    //MARK: - NavigationBar
+    //MARK: - NavigationBar Animation
     @IBAction func didTapNavigationBarTitleButton() {
         
         let maxNumberRowsVisible:CGFloat = 4.0
@@ -153,7 +153,7 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
     }
     
     func animationToShowOrHiddeYearTableView(isYearTableViewVisible: Bool, yPositionYearTableView: CGFloat) {
-        UIView.animate(withDuration: animationShowHiddeYearTableViewDuration,
+        UIView.animate(withDuration: AnimationTimers.navigationBarMenuTimer,
                        delay: 0.0,
                        options: UIViewAnimationOptions.curveEaseIn,
                        animations: { () -> Void in
@@ -176,12 +176,10 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
             }
         })
     }
-    
+        
     //MARK: - Charts
     
     func initilizeChartView() {
-        
-        var valueColors = [UIColor]()
         
         chartView.pinchZoomEnabled = false
         chartView.doubleTapToZoomEnabled = false
@@ -189,22 +187,31 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         chartView.legend.enabled = false
         chartView.xAxis.drawGridLinesEnabled = false
         
-        var dataEntries: [ChartDataEntry] = []
-        
-        for i in 0..<arrayTreasureGraphToShow.count {
-            let dataEntry = ChartDataEntry(x: Double(i), y: Double(arrayTreasureGraphToShow[i].accumulatedBalance!))
+        chartView.noDataText = "No_data_available".localized()
+
+        if arrayTreasureGraphToShow.count > 0 {
+            
+            var valueColors = [UIColor]()
+            var dataEntries: [ChartDataEntry] = []
+            
+            for i in 0..<arrayTreasureGraphToShow.count {
+                let dataEntry = ChartDataEntry(x: Double(i), y: Double(arrayTreasureGraphToShow[i].accumulatedBalance!))
                 dataEntries.append(dataEntry)
-            valueColors.append(colorPicker(value: arrayTreasureGraphToShow[i].accumulatedBalance!))
+                valueColors.append(colorPicker(value: arrayTreasureGraphToShow[i].accumulatedBalance!))
+            }
+            
+            let chartDataSet = LineChartDataSet(values: dataEntries, label: "")
+            chartDataSet.colors = valueColors
+            chartDataSet.drawCirclesEnabled = false
+            chartDataSet.drawValuesEnabled = false
+            chartDataSet.mode = .cubicBezier
+            
+            let chartData = LineChartData(dataSet: chartDataSet)
+            chartView.data = chartData
+        } else {
+            chartView.clear()
         }
         
-        let chartDataSet = LineChartDataSet(values: dataEntries, label: "")
-        chartDataSet.colors = valueColors
-        chartDataSet.drawCirclesEnabled = false
-        chartDataSet.drawValuesEnabled = false
-        chartDataSet.mode = .cubicBezier
-        
-        let chartData = LineChartData(dataSet: chartDataSet)
-        chartView.data = chartData
         
     }
     

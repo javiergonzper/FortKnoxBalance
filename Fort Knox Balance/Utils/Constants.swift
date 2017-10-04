@@ -26,10 +26,15 @@ struct StoryboardIds {
 }
 
 struct Colors {
-    static let navigationBarBackgroundColor = UIColor.groupTableViewBackground
+    static let navigationBarBackgroundColor = UIColor.init ( red: 215.0/255.0, green: 239.0/255.0, blue: 251.0/255.0, alpha: 1.0 )
+    static let menuNavigationBarBackgroundColor = UIColor.init ( red: 192.0/255.0, green: 216.0/255.0, blue: 227.0/255.0, alpha: 1.0 )
     static let loadingAnimationColor = UIColor.lightGray
     static let monthDateViewColor = UIColor.init ( red: 228.0/255.0, green: 46.0/255.0, blue: 46.0/255.0, alpha: 1.0 )
     
+}
+
+struct AnimationTimers {
+    static let navigationBarMenuTimer = 0.5
 }
 
 struct Months {
@@ -51,6 +56,8 @@ struct Months {
 
 struct JSONDataInfo {
     static let allYearsAndFilesAvailable:Array = [YearFile(year: 2017, fileName: "2017-treasury", fileType: "json"),
-                                                  YearFile(year: 2016, fileName: "2016-treasury_1", fileType: "json")
+                                                  YearFile(year: 2016, fileName: "2016-treasury_1", fileType: "json")/*,
+                                                  YearFile(year: 2015, fileName: "2017-treasury", fileType: "json"),
+                                                  YearFile(year: 2014, fileName: "2016-treasury_1", fileType: "json")*/
                                                   ]
 }

@@ -168,6 +168,7 @@
                         <outlet property="disableView" destination="IXC-pT-Dk4" id="ovB-F2-2an"/>
                         <outlet property="moneyValueLabel" destination="r5c-hH-DGZ" id="Jh8-5o-gl8"/>
                         <outlet property="navigationBarTitleButton" destination="9OU-6o-WYc" id="xCT-SI-lBX"/>
+                        <outlet property="navigationBarView" destination="yGg-24-g5z" id="ERB-X0-9gv"/>
                         <outlet property="treasureYearLabel" destination="PXg-KK-ZF8" id="crt-cB-3d0"/>
                         <outlet property="yearTableView" destination="3kq-JN-oCa" id="8w7-N3-MY3"/>
                     </connections>
@@ -241,7 +242,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="323" id="g4V-PU-h4r"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -280,6 +281,7 @@
                     <connections>
                         <outlet property="backButton" destination="2Gz-ST-maS" id="LgN-k3-aog"/>
                         <outlet property="longTextCreditLabel" destination="LLx-kz-OyI" id="Cgs-cF-Hcl"/>
+                        <outlet property="navigationBarView" destination="rTo-a2-gZu" id="wFE-M2-q1A"/>
                         <outlet property="titleNavigationBarLabel" destination="Bhk-lc-j0h" id="mvX-Lt-Rdf"/>
                     </connections>
                 </viewController>
@@ -440,6 +442,7 @@
                     <connections>
                         <outlet property="allYearsDataTableView" destination="tka-o4-4CG" id="WVV-c8-dz3"/>
                         <outlet property="backButton" destination="IGY-fP-Ng1" id="hyN-gD-16c"/>
+                        <outlet property="navigationBarView" destination="aeB-IR-d6z" id="cnx-rZ-juI"/>
                         <outlet property="titleNavigationBarLabel" destination="diT-5W-mIY" id="eyc-H3-bkw"/>
                     </connections>
                 </viewController>

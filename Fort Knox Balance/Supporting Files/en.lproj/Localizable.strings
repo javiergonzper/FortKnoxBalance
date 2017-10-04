@@ -9,6 +9,7 @@
 //Home View
 "Home_View_Title_Year" = "Year $year";
 "Treasure" = "Treasure $year";
+"No_data_available" = "No data available";
 
 //Detail View
 "the_data_of_year" = "The data of the year $year";

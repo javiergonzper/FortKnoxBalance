@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreditsViewController: UIViewController {
+class CreditsViewController: ParentViewController {
     
     @IBOutlet var titleNavigationBarLabel:UILabel!
     @IBOutlet var backButton:UIButton!
