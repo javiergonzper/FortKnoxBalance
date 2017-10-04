@@ -212,10 +212,8 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         
         //input your own logic for how you actually want to color the x axis
         if value <= -0.0 {
-            print("red")
             return UIColor.red
         } else {
-            print("green")
             return UIColor.green
         }
     }

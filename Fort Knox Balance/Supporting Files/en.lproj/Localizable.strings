@@ -15,7 +15,7 @@
 
 //Credits View
 "Credits_label" = "Credits";
-"Credits_long_text" = "I am a Developer (yes, with capital letter :D ) that love his work and always are looking for new challenges.\n\nI like a lot work in a team because is the best (and faster) way to learn new things.\n\nAnd following an African proverb:\n\n\"If you want to go fast, walk alone. If you want to go far, walk together\".\n\nContact at: me@me.com";
+"Credits_long_text" = "Javier González Pérez.\n\nContact at: me@me.com\n\n Library used: \n'Charts''v3.0.3'\n'SwiftyJSON' 'v3.1.4'\n'NVActivityIndicatorView' 'v3.7.0'";
 
 //System
 "Back" = "Back";
