@@ -20,7 +20,7 @@ class DetailViewController: ParentViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.applySyles()
+        self.applyStyles()
         self.loadAllYears()
     }
 
@@ -29,7 +29,7 @@ class DetailViewController: ParentViewController, UITableViewDataSource, UITable
         // Dispose of any resources that can be recreated.
     }
     
-    func applySyles() {
+    func applyStyles() {
         backButton.setTitle("Back".localized(), for: UIControlState.normal)
         titleNavigationBarLabel.text = "the_data_of_year".localizedYear(year: JSONDataInfo.allYearsAndFilesAvailable[0].year!)
     }
@@ -40,6 +40,7 @@ class DetailViewController: ParentViewController, UITableViewDataSource, UITable
         }
     }
     
+    // MARK: - Buttons
     @IBAction func backButtonTapped () {
         dismiss(animated: true, completion: nil)
     }

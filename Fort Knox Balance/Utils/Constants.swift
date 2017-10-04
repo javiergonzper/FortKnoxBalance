@@ -21,6 +21,7 @@ struct StoryboardIds {
     
     //ViewControllers
     static let detailViewController = "detailViewController"
+    static let creditViewController = "creditViewController"
     
 }
 

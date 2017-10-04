@@ -52,7 +52,10 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
     
     //Bottom buttons
     @IBAction func infoButtonTapped () {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: StoryboardIds.creditViewController)
         
+        present(controller, animated: true, completion: nil)
     }
     
     @IBAction func nextButtonTapped () {

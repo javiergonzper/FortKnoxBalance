@@ -8,10 +8,14 @@
 
 //Home View
 "Home_View_Title_Year" = "Año $year";
-"Treasure" = "Tesoreria ";
+"Treasure" = "Tesoreria $year";
 
 //Detail View
 "the_data_of_year" = "Los datos del año $year";
+
+//Credits View
+"Credits_label" = "Credits";
+"Credits_long_text" = "I am a Developer (yes, with capital letter :D ) that love his work and always are looking for new challenges.\n\nI like a lot work in a team because is the best (and faster) way to learn new things.\n\nAnd following an African proverb:\n\n\"If you want to go fast, walk alone. If you want to go far, walk together\".\n\nContact at: me@me.com";
 
 //System
 "Back" = "Atrás";
