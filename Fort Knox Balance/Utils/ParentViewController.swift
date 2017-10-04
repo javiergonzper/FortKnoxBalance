@@ -35,22 +35,22 @@ class ParentViewController: UIViewController, NVActivityIndicatorViewable {
     }
     */
     
-    func startAnimating() {
+    func startParentAnimating(view: UIView) {
         
         let animationSize:CGFloat = 80.0
         
-        let frameSize: CGPoint = CGPoint(x: UIScreen.main.bounds.size.width*0.5,y: UIScreen.main.bounds.size.height*0.5)
+        let frameSize: CGPoint = CGPoint(x: view.bounds.size.width*0.5,y: view.bounds.size.height*0.5)
         let frameLoading = CGRect(x: frameSize.x-(animationSize/2), y: frameSize.y-(animationSize/2), width: animationSize, height: animationSize)
         
         activityIndicatorView = NVActivityIndicatorView(frame: frameLoading, type: NVActivityIndicatorType(rawValue: NVActivityIndicatorType.orbit.rawValue)!)
         activityIndicatorView?.color = Colors.loadingAnimationColor
         
-        self.view.addSubview(activityIndicatorView!)
+        view.addSubview(activityIndicatorView!)
         activityIndicatorView?.startAnimating()
         
     }
     
-    func stopAnimating() {
+    func stopParentAnimating() {
         activityIndicatorView?.stopAnimating()
     }
 

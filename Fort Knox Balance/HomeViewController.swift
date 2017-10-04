@@ -107,11 +107,12 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         self.selectedYearFile = JSONDataInfo.allYearsAndFilesAvailable[indexPath.row]
         self.didTapNavigationBarTitleButton()
         
-        self.startAnimating()
+        //Animation
+        self.startParentAnimating(view: self.chartView)
         let when = DispatchTime.now() + animationShowHiddeYearTableViewDuration
         DispatchQueue.main.asyncAfter(deadline: when) {
             self.refreshInterface()
-            self.stopAnimating()
+            self.stopParentAnimating()
         }
     }
     
@@ -160,6 +161,7 @@ class HomeViewController: ParentViewController, UITableViewDataSource, UITableVi
         }, completion: { (finished) -> Void in
             if isYearTableViewVisible {
                 self.disableView.isHidden = false
+                self.disableView.alpha = 0.0
                 UIView.animate(withDuration: 0.2, delay: 0, options: [], animations: {
                     self.disableView.alpha = 0.7
                 }, completion: { _ in
