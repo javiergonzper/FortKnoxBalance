@@ -22,6 +22,7 @@
 		CB6D1D7F1F84D0B700F749E1 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D1D7E1F84D0B700F749E1 /* UILabel+Extension.swift */; };
 		CBEEE97C1F84FCA300865845 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEEE97B1F84FCA300865845 /* String+Extension.swift */; };
 		CBEEE97E1F85227D00865845 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEEE97D1F85227D00865845 /* CreditsViewController.swift */; };
+		CBEEE9801F86005E00865845 /* ChartFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEEE97F1F86005E00865845 /* ChartFactory.swift */; };
 		CBF55DA51F82563A00D08915 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DA71F82563A00D08915 /* Localizable.strings */; };
 		CBF55DAB1F82579B00D08915 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DAA1F82579B00D08915 /* Info.plist */; };
 		CBF55DAE1F8257AB00D08915 /* 2016-treasury_1.json in Resources */ = {isa = PBXBuildFile; fileRef = CBF55DAC1F8257AB00D08915 /* 2016-treasury_1.json */; };
@@ -82,6 +83,7 @@
 		CB6D1D7E1F84D0B700F749E1 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UILabel+Extension.swift"; path = "Utils/Extensions/UILabel+Extension.swift"; sourceTree = "<group>"; };
 		CBEEE97B1F84FCA300865845 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Utils/Extensions/String+Extension.swift"; sourceTree = "<group>"; };
 		CBEEE97D1F85227D00865845 /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreditsViewController.swift; path = Views/CreditsViewController.swift; sourceTree = "<group>"; };
+		CBEEE97F1F86005E00865845 /* ChartFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartFactory.swift; path = Utils/ChartFactory.swift; sourceTree = "<group>"; };
 		CBF55DA61F82563A00D08915 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CBF55DA81F82566A00D08915 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CBF55DAA1F82579B00D08915 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				CBF55DBE1F82872300D08915 /* ParentViewController.swift */,
 				CBF55DC51F82E0DE00D08915 /* Utils.swift */,
 				CB6D1D771F83D9C300F749E1 /* UtilsJSON.swift */,
+				CBEEE97F1F86005E00865845 /* ChartFactory.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				CBEEE97E1F85227D00865845 /* CreditsViewController.swift in Sources */,
 				CBF55DC21F828F1900D08915 /* YearFile.swift in Sources */,
 				CBF55DBF1F82872300D08915 /* ParentViewController.swift in Sources */,
+				CBEEE9801F86005E00865845 /* ChartFactory.swift in Sources */,
 				CB6D1D7C1F83ED5600F749E1 /* MonthData.swift in Sources */,
 				CB3B5DB01F823640009F2EAF /* HomeViewController.swift in Sources */,
 				CBEEE97C1F84FCA300865845 /* String+Extension.swift in Sources */,
